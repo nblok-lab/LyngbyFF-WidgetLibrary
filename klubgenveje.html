@@ -1,0 +1,87 @@
+<div class="lf-grid">
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=11" alt="">
+    </span>
+    <span class="lf-label">All new sets</span>
+  </a>
+
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=12" alt="">
+    </span>
+    <span class="lf-label">Exclusives</span>
+  </a>
+
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=13" alt="">
+    </span>
+    <span class="lf-label">Offers</span>
+  </a>
+
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=14" alt="">
+    </span>
+    <span class="lf-label">Bestsellers</span>
+  </a>
+
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=15" alt="">
+    </span>
+    <span class="lf-label">Advent calendars</span>
+  </a>
+
+  <a class="lf-tile" href="#">
+    <span class="lf-media">
+      <img src="https://picsum.photos/800/1200?random=16" alt="">
+    </span>
+    <span class="lf-label">Shop Christmas</span>
+  </a>
+</div>
+
+<style>
+  .lf-grid{
+    --gap:14px; --radius:12px; --shadow:0 6px 20px rgba(0,0,0,.18);
+    --label-bg: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.6) 100%);
+    --label-color:#fff;
+    display:grid; grid-template-columns:repeat(6,1fr); gap:var(--gap);
+    max-width:1200px; margin:0 auto;
+  }
+
+  .lf-tile{
+    position:relative; display:block; aspect-ratio:2/3;
+    overflow:hidden; border-radius:var(--radius); box-shadow:var(--shadow);
+    text-decoration:none; background:#0c6b66;
+  }
+
+  /* Billed-lag + gradient */
+  .lf-media{
+    position:absolute; inset:0; z-index:0; display:block;
+  }
+  .lf-media img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition:transform .35s ease;
+  }
+  .lf-media::after{
+    content:""; position:absolute; inset:0;
+    background: var(--label-bg); /* ← gradienten er nu på billed-laget */
+    pointer-events:none;
+  }
+
+  /* Tekst-lag */
+  .lf-label{
+    position:absolute; left:12px; right:12px; bottom:10px;
+    color:var(--label-color); font:700 18px/1.2 system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    text-shadow:0 2px 8px rgba(0,0,0,.6);
+    z-index:1; /* over gradient/billede */
+  }
+
+  .lf-tile:hover .lf-media img{ transform:scale(1.05); }
+
+  @media (max-width:1100px){ .lf-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:700px){ .lf-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:420px){ .lf-grid{ grid-template-columns:1fr; } }
+</style>
