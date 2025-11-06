@@ -1,70 +1,16 @@
 <!doctype html>
 <html lang="da">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lyngby FF · Holdsport Widgets</title>
-  <meta name="description" content="Samling af genbrugelige widgets til Holdsport for Lyngby FF – eksempler, dokumentation og indlejringskode.">
+  <meta name="description"
+    content="Samling af genbrugelige widgets til Holdsport for Lyngby FF – eksempler, dokumentation og indlejringskode.">
   <meta name="theme-color" content="#0a57b8" />
-  <style>
-    :root{
-      --lf-blue:#0a57b8;/* Lyngby-blå (tilpas frit) */
-      --lf-blue-600:#0a4fa7;
-      --ink:#101418;
-      --muted:#5b6875;
-      --bg:#ffffff;
-      --card:#f6f8fa;
-      --ring: rgba(10, 87, 184, .35);
-      --radius: 16px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --bg:#0c0f13; --card:#12161c; --ink:#e6edf3; --muted:#9aa7b3; }
-      .logo mark{ background:linear-gradient(90deg, #0a57b8, #66a6ff); }
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"}
-    a{color:var(--lf-blue);text-decoration:none}
-    a:hover{ text-decoration:underline }
-    .container{max-width:1100px;margin-inline:auto;padding:24px}
-    header.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:24px;border-radius:var(--radius);background:linear-gradient(135deg, rgba(10,87,184,.06), rgba(102,166,255,.10));border:1px solid rgba(10,87,184,.12)}
-    @media (max-width:880px){ header.hero{grid-template-columns:1fr} }
-    .logo{display:flex;gap:12px;align-items:center;margin-bottom:8px}
-    .logo .badge{width:42px;height:42px;border-radius:12px;background:var(--lf-blue);display:grid;place-items:center;color:white;font-weight:700;box-shadow:0 8px 30px rgba(10,87,184,.35)}
-    .logo mark{background:linear-gradient(90deg, rgba(10,87,184,.18), rgba(102,166,255,.18));border-radius:8px;padding:0 .4rem}
-    .kicker{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-    h1{font-size:clamp(28px, 3.2vw, 44px);line-height:1.15;margin:8px 0 10px}
-    p.lead{font-size:1.125rem;color:var(--muted);margin:0}
-
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(16,20,24,.12);background:white;color:#0f1720;font-weight:600;box-shadow:0 1px 0 rgba(16,20,24,.06)}
-    .btn.primary{background:var(--lf-blue);color:white;border-color:var(--lf-blue-600);box-shadow:0 8px 24px var(--ring)}
-    .btn:focus{outline:3px solid var(--ring)}
-
-    /* Widget grid */
-    .section{margin-top:40px}
-    .section h2{font-size:clamp(22px, 2.4vw, 32px);margin:0 0 10px}
-    .grid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:18px}
-    @media (max-width:980px){ .grid{grid-template-columns:repeat(2, 1fr)} }
-    @media (max-width:620px){ .grid{grid-template-columns:1fr} }
-
-    .card{background:var(--card);border:1px solid rgba(16,20,24,.10);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-    .thumb{aspect-ratio: 16/9; background:linear-gradient(135deg, rgba(10,87,184,.12), rgba(102,166,255,.12));display:grid;place-items:center;color:rgba(16,20,24,.65);font-weight:700}
-    .thumb svg{opacity:.65}
-    .card-body{padding:14px}
-    .card h3{margin:0 0 4px;font-size:18px}
-    .chip{font-size:12px;color:var(--muted);border:1px solid rgba(16,20,24,.12);padding:2px 8px;border-radius:999px;margin-right:8px}
-    .card p{margin:10px 0 12px;color:var(--muted)}
-    .actions{display:flex;gap:8px;margin-top:auto;padding:12px;border-top:1px solid rgba(16,20,24,.08);background:color-mix(in srgb, var(--card) 85%, transparent)}
-    .actions .btn{padding:10px 12px}
-
-    pre.code{position:relative;background:#0b1220;color:#e6edf3;padding:14px;border-radius:12px;overflow:auto;border:1px solid rgba(255,255,255,.08)}
-    pre.code code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
-    .copyline{display:flex;gap:8px}
-
-    .howto{background:linear-gradient(180deg, rgba(10,87,184,.06), transparent);border:1px solid rgba(10,87,184,.10);padding:16px;border-radius:16px}
-    .foot{margin-top:40px;padding:18px 0;border-top:1px dashed rgba(16,20,24,.18);color:var(--muted);font-size:14px}
-  </style>
+  <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
   <div class="container">
     <header class="hero" role="banner">
@@ -76,14 +22,19 @@
             <h1>Widgets & snippets til klubben</h1>
           </div>
         </div>
-        <p class="lead">Her samler jeg små, genbrugelige <em>widgets</em> til Holdsport – alt fra gallerier til kamp‑bannere. Brug dem frit på Lyngby FF’s sider. Alle eksempler har <strong>demo</strong>, <strong>kode</strong> og <strong>indlejrings‑snippet</strong>.</p>
+        <p class="lead">Her samler jeg små, genbrugelige <em>widgets</em> til Holdsport – alt fra gallerier til
+          kamp‑bannere. Brug dem frit på Lyngby FF’s sider. Alle eksempler har <strong>demo</strong>,
+          <strong>kode</strong> og <strong>indlejrings‑snippet</strong>.</p>
         <div class="cta">
           <a class="btn primary" href="#widgets" onclick="scrollToId('widgets')">
             <!-- play icon -->
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5v14l11-7-11-7z" fill="currentColor"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 5v14l11-7-11-7z" fill="currentColor" />
+            </svg>
             Se widgets
           </a>
-          <a class="btn" href="https://github.com/nblok-lab/LyngbyFF-WidgetLibrary/" target="_blank" rel="noopener">Åbn repository</a>
+          <a class="btn" href="https://github.com/nblok-lab/LyngbyFF-WidgetLibrary/" target="_blank" rel="noopener">Åbn
+            repository</a>
         </div>
       </div>
       <div class="howto">
@@ -91,9 +42,11 @@
         <ol style="margin:0;padding-left:18px">
           <li>Klik <strong>Demo</strong> for at se, hvordan den ser ud.</li>
           <li>Klik <strong>Kode</strong> for at kopiere HTML/CSS/JS (hvis du vil tilpasse).</li>
-          <li>Klik <strong>Indlejr</strong> for at kopiere et <code>&lt;div&gt;+&lt;script&gt;</code> snippet – sæt det ind på Holdsport under indhold/HTML.</li>
+          <li>Klik <strong>Indlejr</strong> for at kopiere et <code>&lt;div&gt;+&lt;script&gt;</code> snippet – sæt det
+            ind på Holdsport under indhold/HTML.</li>
         </ol>
-        <p style="margin:.5rem 0 0">URL’er genereres automatisk ud fra denne sides domæne (<code>https://github.com/nblok-lab/LyngbyFF-WidgetLibrary/</code>).</p>
+        <p style="margin:.5rem 0 0">URL’er genereres automatisk ud fra denne sides domæne
+          (<code>https://github.com/nblok-lab/LyngbyFF-WidgetLibrary/</code>).</p>
       </div>
     </header>
 
@@ -104,12 +57,18 @@
         <!-- Card: 6‑Bokse Galleri -->
         <article class="card" data-widget-id="six-cards" data-file="widgets/card-links.html">
           <div class="thumb">
-            <svg width="64" height="64" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/></svg>
+            <svg width="64" height="64" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7" rx="2" />
+              <rect x="14" y="3" width="7" height="7" rx="2" />
+              <rect x="3" y="14" width="7" height="7" rx="2" />
+              <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor" />
+            </svg>
           </div>
           <div class="card-body">
             <h3>6‑Bokse Galleri</h3>
             <span class="chip">Billedgalleri</span><span class="chip">2:3 tekst</span>
-            <p>Et responsivt galleri med 6 kasser (billede + hvid tekst). Understøtter gradient på billedet (<code>--label-bg</code>) uden at lægge sig over teksten.</p>
+            <p>Et responsivt galleri med 6 kasser (billede + hvid tekst). Understøtter gradient på billedet
+              (<code>--label-bg</code>) uden at lægge sig over teksten.</p>
           </div>
           <div class="actions">
             <a class="btn" data-action="demo">Demo</a>
@@ -121,12 +80,16 @@
         <!-- Card: Kampbanner -->
         <article class="card" data-widget-id="match-banner" data-file="widgets/match-banner.html">
           <div class="thumb">
-            <svg width="64" height="64" viewBox="0 0 24 24"><path d="M3 7h18v10H3z"/><path d="M7 7V5h10v2" fill="currentColor"/></svg>
+            <svg width="64" height="64" viewBox="0 0 24 24">
+              <path d="M3 7h18v10H3z" />
+              <path d="M7 7V5h10v2" fill="currentColor" />
+            </svg>
           </div>
           <div class="card-body">
             <h3>Kampbanner</h3>
             <span class="chip">Banner</span><span class="chip">Dato/Modstander</span>
-            <p>Dynamisk banner med klubfarver, modstander, dato og “Køb billet”‑link. Kan bruges i nyheder og på holdsider.</p>
+            <p>Dynamisk banner med klubfarver, modstander, dato og “Køb billet”‑link. Kan bruges i nyheder og på
+              holdsider.</p>
           </div>
           <div class="actions">
             <a class="btn" data-action="demo">Demo</a>
@@ -138,8 +101,10 @@
       </div>
 
       <!-- Modal area -->
-      <dialog id="modal" style="border:none;border-radius:16px;max-width:900px;width:clamp(320px, 92vw, 900px);padding:0;background:var(--bg);color:var(--ink)">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(16,20,24,.12)">
+      <dialog id="modal"
+        style="border:none;border-radius:16px;max-width:900px;width:clamp(320px, 92vw, 900px);padding:0;background:var(--bg);color:var(--ink)">
+        <div
+          style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(16,20,24,.12)">
           <strong id="modal-title">Titel</strong>
           <button class="btn" onclick="closeModal()">Luk</button>
         </div>
@@ -150,8 +115,9 @@
 
     <section class="section" aria-label="Om">
       <h2>Om projektet</h2>
-      <p>Denne side drives som en simpel GitHub Pages‑samling. Hver widget ligger som en selvstændig <code>.html</code> i mappen <code>/widgets</code> (evt. med tilhørende <code>.css</code>/<code>.js</code>). 
-      Du kan tilpasse farver, skrifter og indhold, så det matcher Lyngby FF’s visuelle stil.</p>
+      <p>Denne side drives som en simpel GitHub Pages‑samling. Hver widget ligger som en selvstændig <code>.html</code>
+        i mappen <code>/widgets</code> (evt. med tilhørende <code>.css</code>/<code>.js</code>).
+        Du kan tilpasse farver, skrifter og indhold, så det matcher Lyngby FF’s visuelle stil.</p>
       <details>
         <summary>🧩 Mappestruktur (forslag)</summary>
         <pre class="code"><code>.
@@ -168,8 +134,9 @@
 
     <section class="section" aria-label="Bidrag">
       <h2>Bidrag & licens</h2>
-      <p>Opret gerne en <em>pull request</em> med rettelser eller nye widgets. 
-      Foreslåede licenser: <a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener">MIT</a> for kode, og CC‑BY 4.0 for billeder/grafik.</p>
+      <p>Opret gerne en <em>pull request</em> med rettelser eller nye widgets.
+        Foreslåede licenser: <a href="https://choosealicense.com/licenses/mit/" target="_blank" rel="noopener">MIT</a>
+        for kode, og CC‑BY 4.0 for billeder/grafik.</p>
     </section>
 
     <footer class="foot">
@@ -177,81 +144,7 @@
     </footer>
   </div>
 
-  <script>
-    const base = (() => {
-      // Finder basis-URL for GitHub Pages (https://USERNAME.github.io/REPO/) eller lokal udvikling.
-      const { origin, pathname } = window.location;
-      // Hvis host indeholder github.io, antag at /REPO/ er første path-segment
-      if (origin.includes('github.io')){
-        const segs = pathname.split('/').filter(Boolean);
-        const repo = segs.length ? '/' + segs[0] + '/' : '/';
-        return origin + repo;
-      }
-      // Lokal udvikling
-      return origin + '/';
-    })();
-
-    function scrollToId(id){ document.getElementById(id)?.scrollIntoView({behavior:'smooth'}); }
-    function closeModal(){ document.getElementById('modal').close(); }
-    function openModal(title, html){
-      const m = document.getElementById('modal');
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-content').innerHTML = html;
-      if(!m.open) m.showModal();
-    }
-
-    function codeBlock(str){
-      return `<pre class="code"><code>${str.replace(/[&<>]/g, s=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[s]))}</code></pre>`;
-    }
-
-    function embedSnippet(id){
-      const src = `${base}widgets/${id}.html`;
-      // Simpelt embed: iframe. Alternativt kan du lave <script>-based embeds.
-      return `<!-- Indlejr ${id} -->\n<iframe src="${src}" title="${id}" loading="lazy" style="width:100%;border:0;min-height:360px;"></iframe>`;
-    }
-
-    // Event delegation for knapper
-    document.getElementById('grid').addEventListener('click', async (e) => {
-      const btn = e.target.closest('[data-action]');
-      if(!btn) return;
-      const card = e.target.closest('.card');
-      const id = card.dataset.widgetId;
-      const file = card.dataset.file;
-      const title = card.querySelector('h3').textContent;
-
-      if(btn.dataset.action === 'demo'){
-        openModal(title + ' · Demo', `<iframe src="${base}${file}" style="width:100%;height:60vh;border:0;border-radius:12px"></iframe>`);
-      }
-      if(btn.dataset.action === 'code'){
-        try{
-          const res = await fetch(`${base}${file}`);
-          const txt = await res.text();
-          openModal(title + ' · Kode', codeBlock(txt));
-        }catch(err){
-          openModal(title + ' · Kode', `<p>Kunne ikke hente kilde: ${file}</p>`);
-        }
-      }
-      if(btn.dataset.action === 'embed'){
-        const idMap = { 'six-cards':'six-cards', 'match-banner':'match-banner' };
-        const snippet = embedSnippet(idMap[id] || id);
-        const html = `
-          <div class="copyline">
-            <button class="btn" id="copyBtn">Kopiér</button>
-            <span style="color:var(--muted)">Sæt ind i Holdsport som HTML‑indhold</span>
-          </div>
-          ${codeBlock(snippet)}
-        `;
-        openModal(title + ' · Indlejr', html);
-        setTimeout(() => {
-          const btn = document.getElementById('copyBtn');
-          btn?.addEventListener('click', async () => {
-            try{ await navigator.clipboard.writeText(snippet); btn.textContent='Kopieret!'; }catch{ btn.textContent='Kunne ikke kopiere'; }
-          });
-        }, 50);
-      }
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="index.js" defer></script>
 </body>
+
 </html>
